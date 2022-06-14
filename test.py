@@ -28,8 +28,8 @@ class TestHangman(unittest.TestCase):
         self.assertEqual(hangman.show(), display)
 
     @parameterized.expand([('programacion', ['p', 'a', 'z']),
-                           ('merienda', ['b', 'b']),
-                           ('academia', ['a', 'a', 'a', 'a', 'a', 'f', 'f', 'f'])])
+                            ('merienda', ['b', 'b']),
+                            ('academia', ['a', 'a', 'a', 'a', 'a', 'f', 'f', 'f'])])
     def test_raise_assign(self, word, tries):
         hangman = Hangman()
         hangman.set_word(word)
@@ -38,8 +38,8 @@ class TestHangman(unittest.TestCase):
                 hangman.assign(letter)
 
     @parameterized.expand([('inalambrica', ['p', 'a', 'z'], 3),
-                           ('caprese', ['i', 'i'], 3),
-                           ('online', ['o', 'o', 'o', 'o', 'x', 'x', 'x', 'x'], 1)])
+                        ('caprese', ['i', 'i'], 3),
+                        ('online', ['o', 'o', 'o', 'o', 'x', 'x', 'x', 'x'], 1)])
     def test_lifes(self, word, tries, lifes):
         hangman = Hangman()
         hangman.set_word(word)
@@ -61,8 +61,8 @@ class TestHangman(unittest.TestCase):
         self.assertFalse(hangman.winner())
 
     @parameterized.expand([('WoRkSpAcE', ['w', 'o', 'r', 'k', 's', 'p', 'a', 'c', 'e']),
-                           ('PYTHON', ['p', 'y', 't', 'h', 'o', 'n']),
-                           ('science', ['S', 'C', 'I', 'e', 'N'])])
+                            ('PYTHON', ['p', 'y', 't', 'h', 'o', 'n']),
+                            ('science', ['S', 'C', 'I', 'e', 'N'])])
     def test_winner_true(self, word, tries):
         hangman = Hangman()
         hangman.set_word(word)
